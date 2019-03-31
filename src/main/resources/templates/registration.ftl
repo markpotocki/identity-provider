@@ -15,7 +15,7 @@
 
     <div class="register-block">
         <h3>New User</h3>
-        <form class="register-form" name="reg-form" id="reg-form" method="post" action="/identity/register">
+        <form class="register-form" name="reg-form" id="reg-form" method="post" action="/register">
 
             <div>
                 <label for="username">Username</label>
