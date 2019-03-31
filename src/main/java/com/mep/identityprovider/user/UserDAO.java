@@ -29,6 +29,9 @@ public class UserDAO {
             UserModel userModel = new UserModel();
             userModel.setUsername(username);
             userModel.setPassword(rs.getString("PASSWORD"));
+            userModel.setEmail(rs.getString("EMAIL"));
+            userModel.setName(rs.getString("NAME"));
+            userModel.setGrantedAuthorities( (List<GrantedAuthority>) rs.getObject("GRANTED_AUTHORITIES")); // Unsafe Cast
             return userModel;
         });
 

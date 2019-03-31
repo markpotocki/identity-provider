@@ -10,6 +10,8 @@ public class UserModel {
     private String username;
     private String password;
     private List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+    private String email;
+    private String name;
 
     public String getUsername() {
         return username;
@@ -33,5 +35,21 @@ public class UserModel {
 
     public void setGrantedAuthorities(List<GrantedAuthority> grantedAuthorities) {
         this.grantedAuthorities = grantedAuthorities;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
