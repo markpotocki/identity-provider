@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class UserModel {
 
@@ -51,5 +52,22 @@ public class UserModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserModel userModel = (UserModel) o;
+        return Objects.equals(username, userModel.username) &&
+                Objects.equals(password, userModel.password) &&
+                Objects.equals(grantedAuthorities, userModel.grantedAuthorities) &&
+                Objects.equals(email, userModel.email) &&
+                Objects.equals(name, userModel.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, grantedAuthorities, email, name);
     }
 }

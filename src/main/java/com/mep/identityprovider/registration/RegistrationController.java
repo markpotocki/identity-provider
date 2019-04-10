@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/identity/register")
+@RequestMapping("/register")
 public class RegistrationController {
 
     private final RegistrationService registrationService;
@@ -29,9 +29,12 @@ public class RegistrationController {
     @PostMapping
     public ModelAndView registerUser(@ModelAttribute("reg-form") RegistrationDTO registrationDTO) {
         System.out.println(registrationDTO.toString());
-        ModelAndView model = new ModelAndView();
-        model.setViewName("index");
         registrationService.registerUser(registrationDTO);
+        ModelAndView model = new ModelAndView();
+        model.setViewName("registration-sucess");
+        model.addObject("username", registrationDTO.getUsername());
+        model.addObject("intro", "Welcome to the site");
+        model.addObject("help", "Help text goes here");
         return model;
     }
 }
