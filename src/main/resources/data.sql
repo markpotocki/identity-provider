@@ -1,0 +1,1 @@
+INSERT INTO USERS VALUES (1, 'test', '{noop}test', 'USER', 'test@test.com', 'test test');

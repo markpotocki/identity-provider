@@ -39,7 +39,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .anyRequest().permitAll()
                 .and()
                 .formLogin()
-                    .successForwardUrl("/login/hook")
+                    .defaultSuccessUrl("/login/hook")
+                    .loginPage("/authenticate")
+                    .loginProcessingUrl("/login")
                 .and()
                 .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.NEVER);
